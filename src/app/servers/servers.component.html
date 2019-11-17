@@ -1,0 +1,40 @@
+<label>Server Name</label><br>
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)"> -->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+
+
+<button class="btn btn-primary" (click)="createServer()">Add Server</button>
+<h1 [ngStyle]="{backgroundColor:getColor()}">Color is  :{{serverName}}</h1>
+<h1 *ngIf="serverCreated"> Now Server Name is :{{nowServer}}</h1>
+
+<ul>
+    <li *ngFor="let i of names;let x=index">
+        <p *ngIf="x%2==0">{{x+1}}Member are {{i}}</p>
+    </li>
+</ul>
+
+<app-server></app-server>
+<app-server></app-server>
+
+<div *ngFor="let hero of names; let i=index; let odd=odd; trackBy: trackById">
+    ({{i}}) {{hero}}  {{odd}}
+  </div>
+ 
+  <input type="number" [(ngModel)]="inputcase">
+  <div [ngSwitch]="inputcase">
+        <p [ngStyle]="{'font-size': styleExp}" *ngSwitchCase='1'>Sunday</p>
+        <p *ngSwitchCase="2">Monday</p>
+        <p *ngSwitchCase="3">Tuesday</p>
+        <p *ngSwitchCase="4">Wednesday</p>
+        <p *ngSwitchCase="5">Thursday</p>
+        <p *ngSwitchCase="6">Friday</p>
+        <p *ngSwitchCase="7">Satureday</p>
+        <p *ngSwitchDefault>No MAtch Found</p>
+
+  </div>
+  <ol>
+      <li *ngFor="let j of countrycase" >
+          Hi this is {{j.name }} of age {{j.age}} from {{j.country}}
+      </li>
+  </ol>
+

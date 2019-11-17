@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        [routerLink]="['/servers', rserver.id]"
+        [queryParams]="{ allowEdit: rserver.id === 3 ? '1' : '0' }"
+        fragment="loading"
+        class="list-group-item"
+        *ngFor="let rserver of rservers"
+      >
+        {{ rserver.name }}
+      </a>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4">
+    <a routerLink="server">Nested Router Link to RServer</a>
+    <hr />
+    <a routerLink="editserver">Nested Router Link to Edit Server</a>
+    <hr />
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <button class="btn btn-primary" (click)="reloadServer()">
+      ReloadServer
+    </button>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <button class="btn btn-primary" (click)="loadUsers()">
+      Load Users
+    </button>
+  </div>
+  <router-outlet></router-outlet>
+</div>

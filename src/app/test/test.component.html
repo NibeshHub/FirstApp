@@ -1,0 +1,13 @@
+<div class="container">
+<br><br>
+    <div class="progress" >
+        <div  class="progress-bar  progress-bar-striped" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="color:red;" [ngStyle]="{width:getWidth()}">
+          <span class="sr-only">70% Complete</span>
+        </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="alert">It's too High</div>
+      <h1>Value is {{incData}}</h1>
+      <div class="btn btn-primary" style="margin:20px;" (click)="incD()">Increase</div>
+      <div class="btn btn-primary" style="margin:20px;" (click)="decD()">Decrease</div>
+
+</div>

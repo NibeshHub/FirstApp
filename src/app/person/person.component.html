@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-xs-6">
+      <a class="list-group-item clearfix" *ngFor="let person of persons" (click)="onsetPerson(person)" >
+          <div class="pull-left">
+              <h4 class="list-group-item-heading">{{person.name}}</h4>
+              <h4 class="list-group-item-heading">{{person.mobile}}</h4>
+          </div>
+      </a>
+  </div>
+    <div class="col-xs-6">
+      <a href="#" class="list-group-item clearfix" *ngFor="let per of singleperson | person">
+          <div class="pull-right">
+             
+              <h4 class="list-group-item-heading">{{per.name}}</h4>
+              <p class="list-group-item-text">{{per.age}}</p>
+              <p class="list-group-item-text">{{per.message}}</p>
+          </div>
+      </a>
+  </div>
+</div>

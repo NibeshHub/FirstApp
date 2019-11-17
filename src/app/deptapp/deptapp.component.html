@@ -1,0 +1,59 @@
+<div class="container">
+  
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Employee Record</a>
+          </div>
+          <ul class="nav navbar-nav">
+
+              <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" hover="dropdown" href="#">Display<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" (click)="showAs(false)">List</a></li>
+                    <li><a href="#" (click)="showAs(true)">Table</a></li>
+                </ul>
+              </li>
+
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" hover="dropdown" href="#">Filter<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" (click)="orderByDeptAsc(displayEmployeeList)">Order by Dept</a></li>
+                <li><a href="#" (click)="orderByIdAsc(displayEmployeeList)">Order by Id</a></li>
+                <li><a href="#" (click)="orderByNameAsc(displayEmployeeList)">Order by Name</a></li>
+                <li><a href="#" (click)="orderByCountryAsc(displayEmployeeList)">Order by Country</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" hover="dropdown" href="#">Gender<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                  <li><a href="#" (click)="asGender('all')">All</a></li>
+            <li><a href="#"  (click)="asGender('female')">Female</a></li>
+            <li><a href="#"  (click)="asGender('male')">Male</a></li>
+              </ul>
+            </li>
+
+
+          </ul>
+        </div>
+      </nav>
+  
+  <ul class="list-group" *ngIf="!onlistTable"> 
+    <li class="list-group-item" *ngFor="let employee of displayEmployeeList" [ngStyle]="{backgroundColor:getColor(employee)}">{{employee.id}} {{employee.name}} {{employee.dept}} {{employee.gender}} {{employee.age}} {{employee.country}}</li>
+  </ul>
+
+
+
+<table class="table table-hover" *ngIf="onlistTable">
+  <tr><td>ID</td><td>NAME</td><td>DEPT</td><td>GENDER</td><td>AGE</td><td>COUNTRY</td></tr>
+  <tr *ngFor="let employee of displayEmployeeList" [ngStyle]="{backgroundColor:getColor(employee)}">
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.dept}}</td>
+    <td>{{employee.gender}}</td>
+    <td>{{employee.age}}</td>
+    <td><a href="#"  (click)="selectCountry(employee,displayEmployeeList)">{{employee.country}}</a></td>
+  </tr>
+</table>
+
+
+
+</div>

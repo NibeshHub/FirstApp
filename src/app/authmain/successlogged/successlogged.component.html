@@ -1,0 +1,7 @@
+<div *ngIf="isAuthenticated">
+  <h1>You have successfully Logged.......</h1>
+  <button type="button" class="btn btn-primary" (click)="logout()">
+    Logout
+  </button>
+</div>
+<h1 *ngIf="!isAuthenticated">It is not Authenticated</h1>

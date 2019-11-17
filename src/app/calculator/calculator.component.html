@@ -1,0 +1,25 @@
+<div class="container">
+  <!-- <form> -->
+    <div class="form-group row">
+      <div class="col-xs-2">
+        <label for="num1">Enter Number 1:</label>
+        <input type="number" class="form-control" [(ngModel)]="num1">
+      </div>
+
+      <div class="col-xs-2">
+        <label for="num1">Enter Number 2:</label>
+        <input type="number" class="form-control" [(ngModel)]="num2">
+      </div>
+    </div>
+
+    <div class="btn-group-verical">
+      <button type="button" style="margin:10px;" class="btn btn-primary" (click)="calculate(num1,num2,'add')">Sum</button>
+      <button type="button" style="margin:10px;" class="btn btn-primary" (click)="calculate(num1,num2,'sub')">Sub</button>
+      <button type="button" style="margin:10px;" class="btn btn-primary" (click)="calculate(num1,num2,'mul')">Mul</button>
+      <button type="button" style="margin:10px;" class="btn btn-primary" (click)="calculate(num1,num2,'div')">Div</button>
+      <button type="button" style="margin:10px;" class="btn btn-primary" (click)="calculate(num1,num2,'clear')">Clear</button>
+    </div>
+  <!-- </form> -->
+  <p>{{result}}</p>
+
+</div>
